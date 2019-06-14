@@ -1,13 +1,15 @@
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Adress</th>
-    <th>City</th>
-    <th>Postcode</th>
-    <th>Email</th>
-    <th>Phone-number</th>
-  </tr>
-
+<table class="table table-striped table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Adress</th>
+      <th scope="col">City</th>
+      <th scope="col">Postcode</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone-number</th>
+    </tr>
+  </thead>
+  <tbody>
   <?php
 
   foreach ($customer as $row) {
@@ -26,6 +28,7 @@
 <?php
   }
  ?>
+</tbody>
 </table>
 
 <h4><a href="<?= URL ?>customer/create">Toevoegen</a></h4>

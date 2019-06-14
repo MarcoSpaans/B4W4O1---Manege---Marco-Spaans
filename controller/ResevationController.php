@@ -12,7 +12,7 @@ function create() {
 }
 
 function store() {
-	createResevation($_POST['customer'], $_POST['horse'], $_POST['starttime'], $_POST['timespan']);
+	createResevation($_POST);
 
 	header('Location: index');
 	exit;
@@ -24,7 +24,7 @@ function edit($id) {
 
 function update($id) {
 
-	updateResevation($_POST['customer'], $_POST['horse'], $_POST['starttime'], $_POST['timespan'], $id);
+	updateResevation($_POST, $id);
 
 	header('Location: ../index');
 	exit;

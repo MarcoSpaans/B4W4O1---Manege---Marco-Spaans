@@ -1,10 +1,13 @@
-<table>
-  <tr>
-    <th>Name_customer</th>
-    <th>name_horse</th>
-    <th>start time</th>
-    <th>tijdspanne (in minuten)</th>
-  </tr>
+<table class="table table-striped table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>Name_customer</th>
+      <th>name_horse</th>
+      <th>start time</th>
+      <th>tijdspanne (in minuten)</th>
+    </tr>
+  </thead>
+  <tbody>
 
   <?php
 
@@ -23,6 +26,7 @@
 <?php
   }
  ?>
+</tbody>
 </table>
 
 <h4><a href="<?= URL ?>resevation/create">Toevoegen</a></h4>

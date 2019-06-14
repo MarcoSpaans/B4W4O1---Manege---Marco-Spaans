@@ -1,10 +1,13 @@
-<table>
-  <tr>
-    <th>Name</th>
-    <th>race</th>
-    <th>age</th>
-    <th>jump</th>
-  </tr>
+<table class="table table-striped table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>Name</th>
+      <th>race</th>
+      <th>age</th>
+      <th>jump</th>
+    </tr>
+  </thead>
+  <tbody>
 
   <?php
 
@@ -22,6 +25,7 @@
 <?php
   }
  ?>
+</tbody>
 </table>
 
 <h4><a href="<?= URL ?>horse/create">Toevoegen</a></h4>

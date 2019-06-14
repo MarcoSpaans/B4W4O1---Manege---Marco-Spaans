@@ -12,7 +12,8 @@ function create() {
 }
 
 function store() {
-	createCustomer($_POST['name'], $_POST['adress'], $_POST['postcode'], $_POST['city'], $_POST['phone'], $_POST['email']);
+
+	createCustomer($_POST);
 
 	header('Location: index');
 	exit;
@@ -25,7 +26,7 @@ function edit($id) {
 
 function update($id){
 
-	updateCustomer($_POST['name'], $_POST['adress'], $_POST['postcode'], $_POST['city'], $_POST['phone'], $_POST['email'], $id);
+	updateCustomer($_POST, $id);
 
 	header('Location: ../index');
 	exit;

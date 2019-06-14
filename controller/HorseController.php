@@ -13,7 +13,7 @@ function create() {
 
 function store(){
 
-	createHorse($_POST['name'], $_POST['race'], $_POST['age'], $_POST['jump']);
+	createHorse($_POST);
 
 	header('Location: index');
 	exit;
@@ -27,7 +27,7 @@ function edit($id) {
 
 function update($id) {
 
-	updateHorse($_POST['name'], $_POST['race'], $_POST['age'], $_POST['jump'], $id);
+	updateHorse($_POST, $id);
 
 	header('Location: ../index');
 	exit;

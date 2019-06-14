@@ -2,9 +2,9 @@
 
 <form class="" action="<?= URL ?>horse/store" method="post">
   <h3>Name</h3><br>
-  <input type="text" name="name" value="" required>
+  <input type="text" class="form-control" name="name" value="" required>
   <h3>Race</h3><br>
-  <select class="" name="race" required>
+  <select class="form-control" name="race" required>
     <?php
 
     foreach ($race as $option) {
@@ -18,10 +18,20 @@
       ?>
   </select>
   <h3>Age</h3><br>
-  <input type="text" name="age" value="" required>
+  <input type="text" class="form-control" name="age" value="" required>
   <h3>jump</h3><br>
-  <p>yes</p><input type="radio" name="jump" value="yes" required>
-  <p>no</p><input type="radio" name="jump" value="no" required>
+  <div class="form-check">
+    <input type="radio" class="form-check-input" name="jump" value="yes" required>
+    <label class="form-check-label" for="exampleRadios1">
+    yes
+  </label>
+  </div>
+  <div class="form-check">
+    <input type="radio" class="form-check-input" name="jump" value="no" required>
+    <label class="form-check-label" for="exampleRadios1">
+    no
+  </label>
+  </div>
   <br><br>
-  <button type="submit" name="button">CREATE</button>
+  <button type="submit" class="btn btn-primary" name="button">CREATE</button>
 </form>

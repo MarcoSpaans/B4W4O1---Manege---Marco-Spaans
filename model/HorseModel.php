@@ -53,14 +53,22 @@ function getHorsebyID($id)
 
 }
 
-function createHorse($name, $race, $age, $jump)
+function createHorse($data)
 {
+	$name = $data['name'];
+	$race = $data['race'];
+	$age = $data['age'];
+	$jump = $data['jump'];
 	try {
 
 	$db = openDatabaseConnection();
 
-	$sql = "INSERT INTO `horse` (`name_horse`, `race_id`, `age`, `jump`) VALUES ('".$name."', '".$race."', '".$age."', '".$jump."')";
+	$sql = "INSERT INTO `horse` (`name_horse`, `race_id`, `age`, `jump`) VALUES (:name, :race, :age, :jump)";
 	$query = $db->prepare($sql);
+	$query->bindParam(':name', $name);
+	$query->bindParam(':race', $race);
+	$query->bindParam(':age', $age);
+	$query->bindParam(':jump', $jump);
 	$query->execute();
 	$result = $query->fetchAll();
 } catch (Exception $e) {
@@ -72,14 +80,22 @@ echo "Connection failed: " . $e->getMessage();
 
 }
 
-function updateHorse($name, $race, $age, $jump, $id)
+function updateHorse($data, $id)
 {
+	$name = $data['name'];
+	$race = $data['race'];
+	$age = $data['age'];
+	$jump = $data['jump'];
 	try {
 
 	$db = openDatabaseConnection();
 
-	$sql = "UPDATE `horse` SET `name_horse` = '".$name."', `race_id` = '".$race."', `age` = '".$age."', `jump` = '".$jump."' WHERE `id` = :id";
+	$sql = "UPDATE `horse` SET `name_horse` = :name, `race_id` = :race, `age` = :age, `jump` = :jump WHERE `id` = :id";
 	$query = $db->prepare($sql);
+	$query->bindParam(':name', $name);
+	$query->bindParam(':race', $race);
+	$query->bindParam(':age', $age);
+	$query->bindParam(':jump', $jump);
 	$query->bindParam(':id', $id);
 	$query->execute();
 	$result = $query->fetchAll();

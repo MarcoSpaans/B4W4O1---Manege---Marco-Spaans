@@ -33,14 +33,26 @@ function getCustomerbyID($id)
 
 }
 
-function createCustomer($name, $adress, $postcode, $city, $phone, $email)
+function createCustomer($data)
 {
+	$name = $data['name'];
+	$adress = $data['adress'];
+	$postcode = $data['postcode'];
+	$city = $data['city'];
+	$phone = $data['phone'];
+	$email = $data['email'];
 	try {
 
 	$db = openDatabaseConnection();
 
-	$sql = "INSERT INTO `customer` (`name_customer`, `adress`, `postcode`, `city`, `phone`, `email`) VALUES ('".$name."', '".$adress."', '".$postcode."', '".$city."', '".$phone."', '".$email."')";
+	$sql = "INSERT INTO `customer` (`name_customer`, `adress`, `postcode`, `city`, `phone`, `email`) VALUES (:name, :adress, :postcode, :city, :phone, :email)";
 	$query = $db->prepare($sql);
+	$query->bindParam(':name', $name);
+	$query->bindParam(':adress', $adress);
+	$query->bindParam(':postcode', $postcode);
+	$query->bindParam(':city', $city);
+	$query->bindParam(':phone', $phone);
+	$query->bindParam(':email', $email);
 	$query->execute();
 	$result = $query->fetchAll();
 } catch (Exception $e) {
@@ -52,15 +64,26 @@ echo "Connection failed: " . $e->getMessage();
 
 }
 
-function updateCustomer($name, $adress, $postcode, $city, $phone, $email, $id)
+function updateCustomer($data, $id)
 {
+	$name = $data['name'];
+	$adress = $data['adress'];
+	$postcode = $data['postcode'];
+	$city = $data['city'];
+	$phone = $data['phone'];
+	$email = $data['email'];
 	try {
 
 	$db = openDatabaseConnection();
 
-	$sql = "UPDATE `customer`
-	SET `name_customer` = '".$name."', `adress` = '".$adress."', `postcode` = '".$postcode."', `city` = '".$city."', `phone` = '".$phone."', `email` =  '".$email."' WHERE `id` = :id";
+	$sql = "UPDATE `customer` SET `name_customer` = :name, `adress` = :adress, `postcode` = :postcode, `city` = :city, `phone` = :phone, `email` = :email WHERE `id` = :id";
 	$query = $db->prepare($sql);
+	$query->bindParam(':name', $name);
+	$query->bindParam(':adress', $adress);
+	$query->bindParam(':postcode', $postcode);
+	$query->bindParam(':city', $city);
+	$query->bindParam(':phone', $phone);
+	$query->bindParam(':email', $email);
 	$query->bindParam(':id', $id);
 	$query->execute();
 	$result = $query->fetchAll();
