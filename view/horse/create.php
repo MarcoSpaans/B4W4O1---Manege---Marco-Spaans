@@ -1,9 +1,9 @@
 <h1>CREATE HORSE</h1>
 
 <form class="" action="<?= URL ?>horse/store" method="post">
-  <h3>Name</h3><br>
+  <h3>Naam</h3><br>
   <input type="text" class="form-control" name="name" value="" required>
-  <h3>Race</h3><br>
+  <h3>Ras</h3><br>
   <select class="form-control" name="race" required>
     <?php
 
@@ -17,19 +17,19 @@
    }
       ?>
   </select>
-  <h3>Age</h3><br>
+  <h3>Leeftijd</h3><br>
   <input type="text" class="form-control" name="age" value="" required>
-  <h3>jump</h3><br>
+  <h3>Springen</h3><br>
   <div class="form-check">
     <input type="radio" class="form-check-input" name="jump" value="yes" required>
     <label class="form-check-label" for="exampleRadios1">
-    yes
+    ja
   </label>
   </div>
   <div class="form-check">
     <input type="radio" class="form-check-input" name="jump" value="no" required>
     <label class="form-check-label" for="exampleRadios1">
-    no
+    nee
   </label>
   </div>
   <br><br>

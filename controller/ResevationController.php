@@ -12,10 +12,11 @@ function create() {
 }
 
 function store() {
-	createResevation($_POST);
 
-	header('Location: index');
-	exit;
+		createResevation($_POST);
+
+		header('Location: index');
+		exit;
 }
 
 function edit($id) {

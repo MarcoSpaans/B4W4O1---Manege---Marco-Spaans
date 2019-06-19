@@ -1,10 +1,14 @@
+<div class="table-responsive">
 <table class="table table-striped table-hover">
   <thead class="thead-dark">
     <tr>
-      <th>Name_customer</th>
-      <th>name_horse</th>
-      <th>start time</th>
-      <th>tijdspanne (in minuten)</th>
+      <th>Naam klant</th>
+      <th>Naam paard</th>
+      <th>Start tijd</th>
+      <th>Aantal ritjes</th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -28,5 +32,6 @@
  ?>
 </tbody>
 </table>
+</div>
 
 <h4><a href="<?= URL ?>resevation/create">Toevoegen</a></h4>

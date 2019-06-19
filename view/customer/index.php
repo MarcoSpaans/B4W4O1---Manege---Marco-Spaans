@@ -1,12 +1,15 @@
+<div class="table-responsive">
 <table class="table table-striped table-hover">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Adress</th>
-      <th scope="col">City</th>
+      <th scope="col">Naam</th>
+      <th scope="col">Adres</th>
+      <th scope="col">Stad/dorp</th>
       <th scope="col">Postcode</th>
       <th scope="col">Email</th>
-      <th scope="col">Phone-number</th>
+      <th scope="col">Telefoon nummer</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -30,5 +33,6 @@
  ?>
 </tbody>
 </table>
+</div>
 
 <h4><a href="<?= URL ?>customer/create">Toevoegen</a></h4>

@@ -5,7 +5,7 @@ function getAllRevesations()
 
 	$db = openDatabaseConnection();
 
-	$sql = "SELECT resevation.id, customer.name_customer, horse.name_horse, resevation.start_time, resevation.time_span FROM ((`resevation` INNER JOIN customer ON resevation.customer_id = customer.id) INNER JOIN horse on resevation.horse_id = horse.id)";
+	$sql = "SELECT resevation.id, customer.name_customer, horse.name_horse, resevation.start_time, resevation.time_span FROM ((`resevation` INNER JOIN customer ON resevation.customer_id = customer.id) INNER JOIN horse on resevation.horse_id = horse.id) ORDER BY resevation.start_time";
 	$query = $db->prepare($sql);
 	$query->execute();
 	$result = $query->fetchAll();

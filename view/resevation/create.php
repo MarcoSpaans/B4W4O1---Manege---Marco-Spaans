@@ -1,7 +1,7 @@
 <h1>CREATE RESEVATION</h1>
 
 <form class="" action="<?= URL ?>resevation/store" method="post">
-  <h3>Customer</h3><br>
+  <h3>Klant</h3><br>
   <select class="" name="customer" required>
 
     <?php
@@ -17,7 +17,7 @@
       ?>
 
   </select>
-  <h3>Horse</h3><br>
+  <h3>Paard</h3><br>
   <select class="" name="horse" required>
 
 
@@ -34,10 +34,10 @@
      ?>
 
   </select>
-  <h3>Start time</h3><br>
-  <input type="datetime-local" name="starttime" value="" required>
-  <h3>tijdspanne (in minuten)</h3><br>
+  <h3>Start tijd</h3><br>
+  <input type="datetime" placeholder="YYYY-MM-DD 00:00" name="starttime" value="" required>
+  <h3>Aantal ritjes</h3><br>
   <input type="number" name="timespan" value="" required>
   <br><br>
-  <button type="submit" name="button">CREATE</button>
+  <button type="submit" class="btn btn-primary" name="button">CREATE</button>
 </form>

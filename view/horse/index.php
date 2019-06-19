@@ -1,10 +1,13 @@
+<div class="table-responsive">
 <table class="table table-striped table-hover">
   <thead class="thead-dark">
     <tr>
-      <th>Name</th>
-      <th>race</th>
-      <th>age</th>
-      <th>jump</th>
+      <th>Naam</th>
+      <th>ras</th>
+      <th>leeftijd</th>
+      <th>springen</th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -27,5 +30,6 @@
  ?>
 </tbody>
 </table>
+</div>
 
 <h4><a href="<?= URL ?>horse/create">Toevoegen</a></h4>
