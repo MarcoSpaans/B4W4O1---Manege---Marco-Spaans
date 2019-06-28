@@ -81,12 +81,13 @@ function createResevation($data)
 
 	$db = openDatabaseConnection();
 
-	$sql = "INSERT INTO `resevation` (`customer_id`, `horse_id`, `start_time`, `time_span`) VALUES (:customer, :horse, :starttime, :timespan)";
+	$sql = "INSERT INTO `resevation` (`customer_id`, `horse_id`, `start_time`, `time_span`, `end_time`) VALUES (:customer, :horse, :starttime, :timespan, :endtime)";
 	$query = $db->prepare($sql);
 	$query->bindParam(':customer', $customer);
 	$query->bindParam(':horse', $horse);
 	$query->bindParam(':starttime', $starttime);
 	$query->bindParam(':timespan', $timespan);
+	$query->bindParam(':endtime', date("Y-m-d H:i:s", strtotime("+".$timespan." hours", strtotime($starttime))));
 	$query->execute();
 	$result = $query->fetchAll();
 } catch (Exception $e) {
@@ -95,6 +96,24 @@ echo "Connection failed: " . $e->getMessage();
 	$db = null;
 
 	return $result;
+
+}
+
+function isResevationPossible($starttime, $horse_id)
+{
+
+	$db = openDatabaseConnection();
+
+	$sql = "SELECT * FROM `resevation` WHERE horse_id = :horse_id AND :starttime BETWEEN start_time AND end_time";
+	$query = $db->prepare($sql);
+	$query->bindParam(':starttime', $starttime);
+	$query->bindParam(':horse_id', $horse_id);
+	$query->execute();
+	$result = $query->fetchAll();
+
+	$db = null;
+
+	return count($result) > 0 ? false : true;
 
 }
 

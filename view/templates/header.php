@@ -12,6 +12,7 @@
 	<ul class="navbar-nav mr-auto">
 		<li class="nav-link"><a href="<?= URL ?>customer/index">personen</a></li>
 		<li class="nav-link"><a href="<?= URL ?>horse/index">paarden</a></li>
+		<li class="nav-link"><a href="<?= URL ?>race/index">rassen</a></li>
 		<li class="nav-link"><a href="<?= URL ?>resevation/index">reseveringen</a></li>
 	</ul>
 	</nav>

@@ -1,3 +1,4 @@
+
 <h1>CREATE CUSTOMER</h1>
 
 <form class="" action="<?= URL ?>customer/store" method="post">
